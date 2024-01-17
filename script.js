@@ -1,9 +1,11 @@
+
+const video = document.querySelector("video");
+
 window.onload = function () {
     // localStorage.clear();
 
     const resultContainer = document.getElementById("result-container");
     const result = document.getElementById("result");
-    const video = document.querySelector("video");
 
     const sliderContainer = document.querySelector(".slider-container");
     const widthSlider = document.getElementById("width-slider");
@@ -22,46 +24,7 @@ window.onload = function () {
     video.style.display = currentVideoDisplay;
     console.log(currentFontFamily, currentFontSize, currentFontVariation);
     
-    //setting what font styles to show in "mode/features"
-    if (currentFontFamily == "AsTheyDraw_italic" || currentFontFamily == "AsTheyDraw_medium" || currentFontFamily == "AsTheyDrawMonomono") {
-        document.querySelector(".menuContent.AsTheyDraw").classList.add("visible");
-    }
-    else if (currentFontFamily == "Billboards_regular" || currentFontFamily == "Billboards_stencil") {
-        document.querySelector(".menuContent.Billboards").classList.add("visible");
-    }
-    else if (currentFontFamily == "DeadisBetter") {
-        document.querySelector(".menuContent.DeadisBetter").classList.add("visible");
-    }
-    else if (currentFontFamily == "Dirts") {
-        document.querySelector(".menuContent.Dirts").classList.add("visible");
-    }
-    else if (currentFontFamily == "FairGame_regular" || currentFontFamily == "FairGame_italic" || currentFontFamily == "FairGame_rotated") {
-        document.querySelector(".menuContent.FairGame").classList.add("visible");
-    }
-    else if (currentFontFamily == "HeartBeat_inside" || currentFontFamily == "HeartBeat_merged" || currentFontFamily == "HeartBeat_outside" || currentFontFamily == "HeartBeat_stroke") {
-        document.querySelector(".menuContent.HeartBeat").classList.add("visible");
-    }
-    else if (currentFontFamily == "Wifi_bold" || currentFontFamily == "Wifi_bold_extended" || currentFontFamily == "Wifi_bold_extended_italic" || currentFontFamily == "Wifi_bold_italic" || currentFontFamily == "Wifi_condensed" || currentFontFamily == "Wifi_condensed_italic" || currentFontFamily == "Wifi_regular" || currentFontFamily == "Wifi_regular_italic" || currentFontFamily == "Wifi_vfvf") {
-        document.querySelector(".menuContent.Wifi").classList.add("visible");
-    }
-    else if (currentFontFamily == "OpenStudios_body" || currentFontFamily == "OpenStudios_headline") {
-        document.querySelector(".menuContent.OpenStudios").classList.add("visible");
-    }
-    else if (currentFontFamily == "PaaaperChain") {
-        document.querySelector(".menuContent.PaaaperChain").classList.add("visible");
-    }
-    else if (currentFontFamily == "PoliticsofResponse_0" || currentFontFamily == "PoliticsofResponse_100" || currentFontFamily == "PoliticsofResponse_300" || currentFontFamily == "PoliticsofResponse_500" || currentFontFamily == "PoliticsofResponse_700" || currentFontFamily == "PoliticsofResponse_1000") {
-        document.querySelector(".menuContent.PoliticsofResponse").classList.add("visible");
-    }
-    else if (currentFontFamily == "Signal_Grow" || currentFontFamily == "Signal_Inflate") {
-        document.querySelector(".menuContent.Signal").classList.add("visible");
-    }
-    else if (currentFontFamily == "Spritch_AVF" || currentFontFamily == "Spritch_BVF") {
-        document.querySelector(".menuContent.Spritch").classList.add("visible");
-    }
-    else if (currentFontFamily == "Subbookkeeper") {
-        document.querySelector(".menuContent.Subbookkeeper").classList.add("visible");
-    }
+    displayFontStyles(currentFontFamily);
 
     let FirstUse;
     // console.log("FirstUse", FirstUse);
@@ -320,8 +283,8 @@ window.onload = function () {
         // Note: I added .fontName into every fontStyle to hack this function so it also works for styles and not just the names
         const key = fontName.classList[0]; // Assuming the first class is unique
         const fontAttributes = fontMappings[key];
-
-        fontName.style.fontFamily = fontAttributes.fontFamily;
+        const fontFamily = fontAttributes.fontFamily;
+        fontName.style.fontFamily = fontFamily;
         
         const fontSize = fontAttributes.fontSize;
         fontName.style.fontSize = `calc(${fontSize} *.4)`;
@@ -330,16 +293,13 @@ window.onload = function () {
             reset();
         
             // Apply the selected font style to the page content
-            result.style.fontFamily = fontAttributes.fontFamily;
+            result.style.fontFamily = fontFamily;
             result.style.fontSize = fontAttributes.fontSize;
+            displayFontStyles(fontFamily);
+            
             update_font();
         });
     });
-
-    // Billboards_stencil.addEventListener("click", function () {
-    //     result.style.color = "black";
-    //     video.style.display = "block";
-    // });
 
 
     function reset() {
@@ -368,22 +328,6 @@ window.onload = function () {
         sliderValue = parseInt(widthSlider.value);
         set_variable();
     });
-
-    // Update the font width when the slider value changes
-    // document.body.addEventListener("keydown", function (event) {
-    //     // console.log("keydown");
-    //     if (event.key === "ArrowDown" || event.key === "ArrowLeft") {
-    //         // Decrease the slider value
-    //         widthSlider.value = parseInt(widthSlider.value) - 10;
-    //         console.log("decreasing");
-    //         set_variable();
-    //     } else if (event.key === "ArrowUp" || event.key === "ArrowRight") {
-    //         // Increase the slider value
-    //         widthSlider.value = parseInt(widthSlider.value) + 10;
-    //         console.log("increasing");
-    //         set_variable();
-    //     }
-    // });
 
     function set_variable() {
         let variableValue = widthSlider.value;
@@ -428,3 +372,51 @@ menus.forEach((menu) => {
         } 
     })
 });
+
+
+//setting what font styles to show in "mode/features," based on what font has already been chosen
+function displayFontStyles(currentFont) {
+    if (currentFont == "AsTheyDraw_italic" || currentFont == "AsTheyDraw_medium" || currentFont == "AsTheyDrawMonomono") {
+        document.querySelector(".menuContent.AsTheyDraw").classList.add("visible");
+    }
+    else if (currentFont == "Billboards_regular" || currentFont == "Billboards_stencil") {
+        document.querySelector(".menuContent.Billboards").classList.add("visible");
+        if (currentFont == "Billboards_stencil") {
+            result.style.color = "black";
+            video.style.display = "block";
+        }
+    }
+    else if (currentFont == "DeadisBetter") {
+        document.querySelector(".menuContent.DeadisBetter").classList.add("visible");
+    }
+    else if (currentFont == "Dirts") {
+        document.querySelector(".menuContent.Dirts").classList.add("visible");
+    }
+    else if (currentFont == "FairGame_regular" || currentFont == "FairGame_italic" || currentFont == "FairGame_rotated") {
+        document.querySelector(".menuContent.FairGame").classList.add("visible");
+    }
+    else if (currentFont == "HeartBeat_inside" || currentFont == "HeartBeat_merged" || currentFont == "HeartBeat_outside" || currentFont == "HeartBeat_stroke") {
+        document.querySelector(".menuContent.HeartBeat").classList.add("visible");
+    }
+    else if (currentFont == "Wifi_bold" || currentFont == "Wifi_bold_extended" || currentFont == "Wifi_bold_extended_italic" || currentFont == "Wifi_bold_italic" || currentFont == "Wifi_condensed" || currentFont == "Wifi_condensed_italic" || currentFont == "Wifi_regular" || currentFont == "Wifi_regular_italic" || currentFont == "Wifi_vfvf") {
+        document.querySelector(".menuContent.Wifi").classList.add("visible");
+    }
+    else if (currentFont == "OpenStudios_body" || currentFont == "OpenStudios_headline") {
+        document.querySelector(".menuContent.OpenStudios").classList.add("visible");
+    }
+    else if (currentFont == "PaaaperChain") {
+        document.querySelector(".menuContent.PaaaperChain").classList.add("visible");
+    }
+    else if (currentFont == "PoliticsofResponse_0" || currentFont == "PoliticsofResponse_100" || currentFont == "PoliticsofResponse_300" || currentFont == "PoliticsofResponse_500" || currentFont == "PoliticsofResponse_700" || currentFont == "PoliticsofResponse_1000") {
+        document.querySelector(".menuContent.PoliticsofResponse").classList.add("visible");
+    }
+    else if (currentFont == "Signal_Grow" || currentFont == "Signal_Inflate") {
+        document.querySelector(".menuContent.Signal").classList.add("visible");
+    }
+    else if (currentFont == "Spritch_AVF" || currentFont == "Spritch_BVF") {
+        document.querySelector(".menuContent.Spritch").classList.add("visible");
+    }
+    else if (currentFont == "Subbookkeeper") {
+        document.querySelector(".menuContent.Subbookkeeper").classList.add("visible");
+    }
+}
