@@ -47,6 +47,7 @@ body {
 	line-height:1.1em;
 	text-align: center;
 	font-variant-ligatures: normal;
+	text-transform: none;
 	
 }
 
@@ -143,7 +144,7 @@ body {
 
 .font .styles {
 	padding-top:.5em;
-	font-size:.5em;
+	font-size:.65em;
 	font-family: "favorit";
 }
 
@@ -250,4 +251,8 @@ video {
 
 #result.ligsDisabled {
 	font-variant-ligatures: no-common-ligatures;
+}
+
+#result.allCaps {
+	text-transform: uppercase;
 }

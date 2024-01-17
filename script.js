@@ -99,7 +99,7 @@ window.onload = function () {
                     localStorage.setItem("savedFirstUse", FirstUse);
 
                     // Reload the page with the new URL after a pause
-                    setTimeout(() => location.reload(), 1000);
+                    setTimeout(() => location.reload(), 750);
                 } else {
                     interimTranscript += transcript;
                     wordCount = interimTranscript.split(" ").length;
@@ -399,6 +399,11 @@ function displayFontStyles(currentFont) {
         ligsDisabled.classList.remove("ligsDisabled");
     }
 
+    const allCaps = document.querySelector(".allCaps")
+    if (allCaps) {
+        allCaps.classList.remove("allCaps");
+    }
+
     if (currentFont == "AsTheyDraw_italic" || currentFont == "AsTheyDraw_medium" || currentFont == "AsTheyDrawMonomono") {
         document.querySelector(".menuContent.AsTheyDraw").classList.add("visible");
         result.classList.add("ligsDisabled");
@@ -443,5 +448,6 @@ function displayFontStyles(currentFont) {
     }
     else if (currentFont == "Subbookkeeper") {
         document.querySelector(".menuContent.Subbookkeeper").classList.add("visible");
+        result.classList.add("allCaps");
     }
 }
