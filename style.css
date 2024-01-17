@@ -1,0 +1,206 @@
+:root {
+	--fontSize: 40px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding:0;
+}
+
+body {
+	background-color: black;
+	font-size: var(--fontSize);
+	color: white;
+	margin: 0;
+	padding: 0;
+	font-family:"favorit";
+}
+
+#container {
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	padding: 0 1em;
+	width:100vw;
+	height: 100vh;
+}
+
+#result-container {
+	width: 100%;
+	height: 80vh;
+	border: none;
+	overflow-y: scroll;
+	overflow-x:hidden;
+	padding: 0.5em;
+	text-align: center;
+	/* background:pink; */
+}
+#result-container::-webkit-scrollbar {
+	display: none;
+}
+#result {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	font-size: 3em;
+	line-height:1.1em;
+	text-align: center;
+	
+}
+
+/*MENUS*/
+.menus {
+	display:flex;
+	flex-flow: row nowrap;
+	width:100%;
+	height:1em;
+	position:fixed;
+	bottom:1em;
+	left:0em;
+}
+
+.menu {
+	background-color: white;
+	font-size: .5em;
+	color: black;
+	cursor: pointer;
+
+	margin: 0 1em;
+	height:100%;
+
+	position:relative;
+}
+
+.fonts {
+	min-width: 33%;
+}
+
+.features {
+	min-width: 12.5%;
+}
+
+.modes {
+	min-width: 5%;
+}
+
+.menu button {
+	font-size:1em;
+	background-color: white;
+	border: white 1px solid;
+	outline: none;
+	width:100%;
+	padding: .5em;
+	text-align: left;
+	cursor: pointer;
+}
+
+.menu button:hover {
+	background-color: #545454;
+	color: white;
+}
+
+button:after {
+	content: '\25B2';
+	float: right;
+}
+
+.active:after {
+	content: "\25BC";
+}
+
+.menuContent {
+	width:100%;
+	position:absolute;
+	bottom:100%;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #f1f1f1;
+}
+
+.fontName, .fontStyle {
+	padding: .25em .25em;
+	border: 1px #545454 solid;
+}
+
+.features .menuContent {
+	display:none;
+}
+
+/* needs .menuContent specificity so that display:none; in .features .menuContent doesn't override it */
+.menuContent.visible{
+ 	display:block;
+}
+
+/* SLIDER */
+.slider-container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	width: 20%;
+	padding: 20px;
+	/* background-color: pink; */
+	z-index: 100;
+}
+
+label {
+	text-orientation:sideways;
+	margin-bottom: 10px;
+}
+
+input[type=range]{
+	-webkit-appearance: none;
+		width: 100%;
+		height: 10px;
+		border-radius: 5px;
+		background-color: #e6e6e6;
+		outline: none;
+		margin: 20px 0;
+	
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #666;
+		cursor: pointer;
+}
+
+video {
+	position:fixed;
+	z-index:-1;
+	top:50%;
+	left:0;
+	/* background:blue; */
+	transform: translateY(-50%);
+
+	width: 100%;
+	height: 80vh;
+	padding: 0.5em;
+	display:none;
+}
+
+.vf_animation {
+	animation: vf_animate 1s infinite ease-in-out;
+	animation-iteration-count: 1;
+}
+
+@keyframes vf_animate {
+	from {
+		font-variation-settings: "wdth" 1000, "wght" 1000, "HGHT" 900;
+	}
+	to {
+		font-variation-settings: "wdth" 0,
+			"wght" 0,
+			"HGHT" 0;
+	}
+}

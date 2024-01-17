@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Voice to Text</title>
+	<link rel="stylesheet" href="fonts.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<div class="slider-container">
+			<!-- <label for="width-slider">W</label> -->
+			<input id="width-slider" type="range" orient="vertical" min="0" max="1000" value="1000">
+		</div>
+
+		<div id="result-container">
+			<p id="result"></p>
+			<!-- <p class="vf_animation" style="font-family:'DeadisBetter'"> HIE HIEHRIHQEIRH </p> -->
+			<video autoplay muted loop>
+				<source src="vids/speaker_1.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="menus">
+			<div class="menu fonts">
+				<div class="menuContent visible">
+					<div class="AsTheyDraw_italic fontName">
+						As They Draw
+					</div>
+					<div class="Billboards_regular fontName">
+						Billboards Regular
+					</div>
+					<div class="DeadisBetter fontName">
+						Dead Is Better
+					</div>
+					<div class="Dirts fontName">
+						Dirts
+					</div>
+					<div class="FairGame_rotated fontName">
+						Fair Game
+					</div>
+					<div class="HeartBeat_merged fontName">
+						HeartBeat
+					</div>
+					<div class="Wifi_vfvf fontName">
+						Wifi
+					</div>
+					<div class="OpenStudios_headline fontName">
+						Open Studios
+					</div>
+					<div class="PaaaperChain fontName">
+						Paaaperchain
+					</div>
+					<div class="PoliticsofResponse_700 fontName">
+						Politics of Response
+					</div>
+					<div class="Signal_Inflate fontName">
+						Signal
+					</div>
+					<div class="Spritch_AVF fontName">
+						Spritch
+					</div>
+					<div class="Subbookkeeper fontName">
+						Subbookkeeper
+					</div>
+				</div>
+				<button class="">typeface</button>
+				
+			</div>
+
+			<div class="menu features">
+				<div class="menuContent AsTheyDraw">
+					<div class="AsTheyDraw_medium fontStyle fontName">
+						medium
+					</div>
+					<div class="AsTheyDraw_italic fontStyle fontName">
+						italic
+					</div>
+				</div>
+				<div class="menuContent Billboards">
+					<div class="Billboards_regular fontStyle fontName">
+						regular
+					</div>
+					<div class="Billboards_stencil fontStyle fontName">
+						stencil
+					</div>
+				</div>
+				<div class="menuContent DeadisBetter">
+					<div class="DeadisBetter fontStyle fontName">
+						variable
+					</div>
+				</div>
+				<div class="menuContent Dirts">
+					<div class="Dirts fontStyle fontName">
+						variable
+					</div>
+				</div>
+				<div class="menuContent FairGame">
+					<div class="FairGame_regular fontStyle fontName">
+						regular
+					</div>
+					<div class="FairGame_italic fontStyle fontName">
+						italic
+					</div>
+					<div class="FairGame_rotated fontStyle fontName">
+						rotated
+					</div>
+				</div>
+				<div class="menuContent HeartBeat">
+					<div class="HeartBeat_inside fontStyle fontName">
+						inside
+					</div>
+					<div class="HeartBeat_merged fontStyle fontName">
+						merged
+					</div>
+					<div class="HeartBeat_outside fontStyle fontName">
+						outside
+					</div>
+					<div class="HeartBeat_stroke fontStyle fontName">
+						stroke
+					</div>
+				</div>
+				<div class="menuContent Wifi">
+					<div class="Wifi_bold fontStyle fontName">
+						bold
+					</div>
+					<div class="Wifi_bold_extended fontStyle fontName">
+						bold extended
+					</div>
+					<div class="Wifi_bold_extended_italic fontStyle fontName">
+						bold extended italic
+					</div>
+					<div class="Wifi_bold_italic fontStyle fontName">
+						bold italic
+					</div>
+					<div class="Wifi_condensed fontStyle fontName">
+						condensed
+					</div>
+					<div class="Wifi_condensed_italic fontStyle fontName">
+						condensed italic
+					</div>
+					<div class="Wifi_regular fontStyle fontName">
+						regular
+					</div>
+					<div class="Wifi_regular_italic fontStyle fontName">
+						regular italic
+					</div>
+					<div class="Wifi_vfvf fontStyle fontName">
+						vfvf
+					</div>
+				</div>
+				<div class="menuContent OpenStudios">
+					<div class="OpenStudios_body fontStyle fontName">
+						
+					</div>
+					<div class="OpenStudios_headline fontStyle fontName">
+						
+					</div>
+				</div>
+				<div class="menuContent PaaaperChain">
+					<div class="PaaaperChain fontStyle fontName">
+						regular
+					</div>
+				</div>
+				<div class="menuContent PoliticsofResponse">
+					<div class="PoliticsofResponse_0 fontStyle fontName">
+						0
+					</div>
+					<div class="PoliticsofResponse_100 fontStyle fontName">
+						100
+					</div>
+					<div class="PoliticsofResponse_300 fontStyle fontName">
+						300
+					</div>
+					<div class="PoliticsofResponse_500 fontStyle fontName">
+						500
+					</div>
+					<div class="PoliticsofResponse_700 fontStyle fontName">
+						700
+					</div>
+					<div class="PoliticsofResponse_1000 fontStyle fontName">
+						1000
+					</div>
+				</div>
+				<div class="menuContent Signal">
+					<div class="Signal_Grow fontStyle fontName">
+						Grow
+					</div>
+					<div class="Signal_Inflate fontStyle fontName">
+						Inflate
+					</div>
+				</div>
+				<div class="menuContent Spritch">
+					<div class="Spritch_AVF fontStyle fontName">
+						AVF
+					</div>
+					<div class="Spritch_BVF fontStyle fontName">
+						BVF
+					</div>
+				</div>
+				<div class="menuContent Subbookkeeper">
+					<div class="Subbookkeeper fontStyle fontName">
+						regular
+					</div>
+				</div>
+				<button class="">mode/features</button>
+			</div>
+
+			<div class="menu modes">
+				<button class="">&#9680;</button>
+			</div>
+		</div>
+
+
+
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

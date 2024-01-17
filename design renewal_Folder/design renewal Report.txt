@@ -1,0 +1,95 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: design renewal.ai
+Color Mode: RGB color
+Color Profile: Display
+Ruler Units: pixels
+Artboard Dimensions: 1920 px x 1080 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Final Dead is Better V1 (TrueType)
+Final Wifi VF Black (TrueType)
+Final Dirts scattered (TrueType)
+Fair Game Mono rotated (OTF)
+Favorit Std Regular (OTF)
+Fina Openstudios Headline (OTF)
+Final As They Draw italic (OTF)
+Final Billbaords (OTF)
+Final Paaaper Chain book (OTF)
+Final Politics of Respond 800 (OTF)
+Final Subbookkeeper (TrueType)
+Final Spritch A Compressed (TrueType)
+Final signal inflate 2 (TrueType)
+Final Heartbeat Merged width-604.000 (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+/Users/jisungmacbook/Documents/Screenshot 2024-01-16 at 8.53.18AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 33645K, 3616 by 2382 pixels
+Dimensions: 2040.371 by 1191 points 
+Resolution: 127.6 by 144 pixels per inch
+
+
+/Users/jisungmacbook/Documents/Screenshot 2024-01-16 at 8.53.18AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 33645K, 3616 by 2382 pixels
+Dimensions: 2040.371 by 1191 points 
+Resolution: 127.6 by 144 pixels per inch
+
+
+/Users/jisungmacbook/Documents/Screenshot 2024-01-16 at 8.53.18AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 33645K, 3616 by 2382 pixels
+Dimensions: 2040.371 by 1191 points 
+Resolution: 127.6 by 144 pixels per inch
+
+
+/Users/jisungmacbook/Documents/Screenshot 2024-01-16 at 8.53.18AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 33645K, 3616 by 2382 pixels
+Dimensions: 1201.082 by 791.2 points 
+Resolution: 216.764 by 216.764 pixels per inch
+
+
+/Users/jisungmacbook/Documents/Screenshot 2024-01-16 at 8.53.56AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 33645K, 3616 by 2382 pixels
+Dimensions: 1201.082 by 791.2 points 
+Resolution: 216.764 by 216.764 pixels per inch
