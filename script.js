@@ -376,6 +376,11 @@ menus.forEach((menu) => {
 
 //setting what font styles to show in "mode/features," based on what font has already been chosen
 function displayFontStyles(currentFont) {
+    const allFeatures = document.querySelectorAll(".features .menuContent");
+    allFeatures.forEach((feature) => {
+        feature.classList.remove("visible");
+    });
+
     if (currentFont == "AsTheyDraw_italic" || currentFont == "AsTheyDraw_medium" || currentFont == "AsTheyDrawMonomono") {
         document.querySelector(".menuContent.AsTheyDraw").classList.add("visible");
     }
