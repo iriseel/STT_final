@@ -16,6 +16,7 @@ window.onload = function () {
     let currentFontVariation = localStorage.getItem("savedFontVariation");
     let currentSliderValue = localStorage.getItem("savedSliderValue");
     let currentVideoDisplay = localStorage.getItem("savedVideoDisplay");
+
     result.style.fontFamily = currentFontFamily;
     result.style.fontSize = currentFontSize;
     result.style.color = currentFontColor;
@@ -363,15 +364,27 @@ var menus = document.querySelectorAll(".menu");
 menus.forEach((menu) => {
     const button = menu.querySelector("button");
     button.addEventListener("click", function() {
-        const menuContent = menu.querySelector(".menuContent.visible");
         button.classList.toggle("active");
-        if (menuContent.style.maxHeight){
-          menuContent.style.maxHeight = null;
-        } else {
-          menuContent.style.maxHeight = menuContent.scrollHeight + "px";
-        } 
+        toggleMenu(menu);
+    })
+    
+    menu.addEventListener("mouseleave", function() {
+        if (button.classList.contains("active")) {
+            button.classList.remove("active");
+            toggleMenu(menu);
+        }
     })
 });
+
+function toggleMenu(menu) {
+    const menuContent = menu.querySelector(".menuContent.visible");
+    
+    if (menuContent.style.maxHeight){
+      menuContent.style.maxHeight = null;
+    } else {
+      menuContent.style.maxHeight = menuContent.scrollHeight + "px";
+    } 
+}
 
 
 //setting what font styles to show in "mode/features," based on what font has already been chosen
@@ -381,8 +394,14 @@ function displayFontStyles(currentFont) {
         feature.classList.remove("visible");
     });
 
+    const ligsDisabled = document.querySelector(".ligsDisabled")
+    if (ligsDisabled) {
+        ligsDisabled.classList.remove("ligsDisabled");
+    }
+
     if (currentFont == "AsTheyDraw_italic" || currentFont == "AsTheyDraw_medium" || currentFont == "AsTheyDrawMonomono") {
         document.querySelector(".menuContent.AsTheyDraw").classList.add("visible");
+        result.classList.add("ligsDisabled");
     }
     else if (currentFont == "Billboards_regular" || currentFont == "Billboards_stencil") {
         document.querySelector(".menuContent.Billboards").classList.add("visible");
@@ -417,6 +436,7 @@ function displayFontStyles(currentFont) {
     }
     else if (currentFont == "Signal_Grow" || currentFont == "Signal_Inflate") {
         document.querySelector(".menuContent.Signal").classList.add("visible");
+        result.classList.add("ligsDisabled");
     }
     else if (currentFont == "Spritch_AVF" || currentFont == "Spritch_BVF") {
         document.querySelector(".menuContent.Spritch").classList.add("visible");
